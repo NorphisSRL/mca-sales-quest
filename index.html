@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Il progetto segreto per Claudio</title>
+    <link rel="stylesheet" href="styles.css?v=15" />
+  </head>
+  <body>
+    <main class="app" aria-live="polite">
+      <div class="progress" aria-hidden="true">
+        <span id="progressBar"></span>
+      </div>
+
+      <section class="funnel-page hero-page is-active" data-page="0" aria-labelledby="hero-title">
+        <div class="sticker sticker-one">beta privata</div>
+        <div class="sticker sticker-two">progetto digitale?</div>
+        <div class="blob" aria-hidden="true"></div>
+
+        <div class="content">
+          <p class="kicker">Ciao Claudio, ti condivido il mio ultimo progetto.</p>
+          <h1 id="hero-title">Una web app che promette di aumentare le vendite digitali.</h1>
+          <p class="lead">
+            Lo so: sembra il classico link a un nuovo prodotto. Dashboard, conversioni, promessa ambiziosa.
+            Tranquillo, per ora niente pitch da 48 minuti.
+          </p>
+
+          <div class="fake-product" aria-label="Finta demo prodotto digitale">
+            <div class="fake-product__top">
+              <span>Revenue Booster 3000</span>
+              <strong id="fakePercent">37%</strong>
+            </div>
+            <div class="fake-product__bar"><span id="fakeBar"></span></div>
+            <button class="primary-button" id="tryProduct" type="button">Apri la demo segreta</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="funnel-page reveal-page" data-page="1" aria-labelledby="reveal-title">
+        <div class="content narrow">
+          <p class="kicker">Plot twist molto poco SaaS</p>
+          <h2 id="reveal-title">Il prodotto digitale... sono io.</h2>
+          <div class="text-card">
+            <p>
+              Sono studente MCA da 2 anni. Conosco da dentro la qualità della società, il supporto
+              che date agli studenti e il valore del contenuto dell'accademia.
+            </p>
+            <p>
+              E sì, questa era una trappola gentile: tu pensavi di aprire un prodotto digitale,
+              invece hai appena aperto la mia candidatura travestita bene.
+            </p>
+          </div>
+          <button class="primary-button next-button" type="button" data-next>Ok, mi hai fregato</button>
+        </div>
+      </section>
+
+      <section class="funnel-page obsession-page" data-page="2" aria-labelledby="obsession-title">
+        <div class="content split">
+          <div>
+            <p class="kicker">La parte seria, ma senza violini</p>
+            <h2 id="obsession-title">Ad oggi ho un unico obiettivo: entrare a far parte del team MCA.</h2>
+          </div>
+          <div class="quote-card">
+            <p>
+              Te l'ho detto più volte e lo penso davvero: ad oggi il mio unico obiettivo è entrare
+              a far parte del team MCA. Non è una semplice opportunità: sono follemente innamorato
+              e ossessionato da questo business, dal metodo e da tutto il team.
+            </p>
+            <p>
+              Quando mi hai detto che sarò il prossimo ad entrare e che in me hai già visto potenziale,
+              per me non è stata una frase qualunque. È diventata una responsabilità: voglio dimostrarti
+              che quella fiducia era meritata e mettere tutto quello che ho per aiutare MCA a diventare
+              ancora più grande.
+            </p>
+            <button class="secondary-button next-button" type="button" data-next>Continua, questa mi interessa</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="funnel-page mission-page" data-page="3" aria-labelledby="mission-title">
+        <div class="content">
+          <p class="kicker">Missione personale</p>
+          <h2 id="mission-title">Voglio mettere del mio per far diventare MCA sempre più grande.</h2>
+          <div class="mini-grid">
+            <button class="mini-card" type="button" data-proof="studenti">
+              <span>01</span>
+              Capisco gli studenti perché sono uno di loro.
+            </button>
+            <button class="mini-card" type="button" data-proof="prodotto">
+              <span>02</span>
+              Credo nel prodotto perché l'ho vissuto.
+            </button>
+            <button class="mini-card" type="button" data-proof="team">
+              <span>03</span>
+              Voglio contribuire al team, non solo "trovare un posto".
+            </button>
+          </div>
+          <div class="proof-result" id="proofResult">
+            Clicca una card. Prometto che non parte una testimonianza da landing page.
+          </div>
+          <button class="primary-button next-button" type="button" data-next>Ok, arriviamo al test</button>
+        </div>
+      </section>
+
+      <section class="funnel-page game-page" data-page="4" aria-labelledby="game-title">
+        <div class="content">
+          <p class="kicker">Mini test per sales manager</p>
+          <h2 id="game-title">Secondo te Francesco potrebbe essere un commerciale MCA?</h2>
+          <p class="lead">Rispondi con calma. Il sistema è imparziale, tranne quando provi a dire no.</p>
+
+          <div class="choice-zone" id="choiceZone">
+            <button class="yes-button" id="yesButton" type="button">Sì, parliamone</button>
+            <button class="no-button" id="noButton" type="button">No</button>
+          </div>
+
+          <div class="excuse-box" id="excuseBox">Il pulsante No ha appena aperto un ticket col supporto MCA.</div>
+        </div>
+      </section>
+
+      <section class="funnel-page finale-page" data-page="5" aria-labelledby="finale-title">
+        <div class="finale-card">
+          <p class="kicker">Conclusione scientifica</p>
+          <h2 id="finale-title">Claudio, ora devi scrivermi.</h2>
+          <p>
+            Dammi una prova, un target o una piccola missione commerciale. Io ci metto testa, fame,
+            energia e tutto quello che ho imparato vivendo MCA da dentro.
+          </p>
+          <div class="countdown-card" aria-label="Countdown due mesi">
+            <span>Timer ufficiale anti-dimenticanza</span>
+            <div class="countdown-grid">
+              <strong id="daysLeft">--</strong>
+              <strong id="hoursLeft">--</strong>
+              <strong id="minutesLeft">--</strong>
+            </div>
+            <div class="countdown-labels">
+              <span>giorni</span>
+              <span>ore</span>
+              <span>minuti</span>
+            </div>
+            <p>
+              Se entro 2 mesi non entro nel team MCA, torno alla carica più feroce che mai.
+              Versione Francesco 2.0: più follow-up, meno pietà.
+            </p>
+          </div>
+          <div class="finale-actions">
+            <a class="whatsapp-button" id="whatsappLink" href="https://wa.me/393516148929" target="_blank" rel="noreferrer">
+              Torna alla chat WhatsApp
+            </a>
+            <button class="secondary-button" id="partyButton" type="button">Fai esplodere la KPI</button>
+          </div>
+          <p class="copied" id="copiedText"></p>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast">Obiezione gestita.</div>
+    <div class="chaos-modal" id="chaosModal" role="dialog" aria-modal="true" aria-labelledby="chaosTitle" hidden>
+      <div class="chaos-card">
+        <div class="alarm-strip">ALLARME CHIUSURA TROPPO RAPIDA</div>
+        <p class="kicker">Protocollo sales interrotto</p>
+        <h2 id="chaosTitle">Claudio ha cliccato Sì al primo colpo. Il CRM è svenuto.</h2>
+        <p>
+          Il reparto obiezioni ha lanciato una riunione d'emergenza. Il pulsante No si è sentito
+          inutile, ha messo "open to work" su LinkedIn e ora pretende almeno una fuga teatrale.
+        </p>
+        <div class="chaos-stats">
+          <span>Obiezioni gestite: 0</span>
+          <span>Dignità del No: -14%</span>
+          <span>Probabilità risata: critica</span>
+        </div>
+        <button class="secondary-button" id="returnToNo" type="button">Riattiva il No drammatico</button>
+      </div>
+    </div>
+    <canvas id="confetti" aria-hidden="true"></canvas>
+    <script src="script.js?v=15"></script>
+  </body>
+</html>
