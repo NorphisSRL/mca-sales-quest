@@ -79,28 +79,40 @@ function moveNoButton() {
   const zone = choiceZone.getBoundingClientRect();
   const button = noButton.getBoundingClientRect();
   const yes = yesButton.getBoundingClientRect();
+  const isTouchLayout = window.matchMedia("(pointer: coarse)").matches || window.innerWidth <= 640;
   const maxX = Math.max(0, zone.width - button.width - 18);
   const maxY = Math.max(0, zone.height - button.height - 18);
   let x = 12;
   let y = 12;
 
-  for (let attempt = 0; attempt < 24; attempt += 1) {
-    x = 12 + Math.random() * maxX;
-    y = 12 + Math.random() * maxY;
+  if (isTouchLayout) {
+    const mobileSpots = [
+      [maxX, 18],
+      [maxX, maxY],
+      [18, maxY],
+      [Math.max(18, maxX * 0.58), Math.max(18, maxY * 0.54)],
+      [Math.max(18, maxX * 0.12), Math.max(18, maxY * 0.22)],
+    ];
+    [x, y] = mobileSpots[noAttempts % mobileSpots.length];
+  } else {
+    for (let attempt = 0; attempt < 24; attempt += 1) {
+      x = 12 + Math.random() * maxX;
+      y = 12 + Math.random() * maxY;
 
-    const next = {
-      left: zone.left + x,
-      right: zone.left + x + button.width,
-      top: zone.top + y,
-      bottom: zone.top + y + button.height,
-    };
-    const safeFromYes =
-      next.right < yes.left - 18 ||
-      next.left > yes.right + 18 ||
-      next.bottom < yes.top - 18 ||
-      next.top > yes.bottom + 18;
+      const next = {
+        left: zone.left + x,
+        right: zone.left + x + button.width,
+        top: zone.top + y,
+        bottom: zone.top + y + button.height,
+      };
+      const safeFromYes =
+        next.right < yes.left - 18 ||
+        next.left > yes.right + 18 ||
+        next.bottom < yes.top - 18 ||
+        next.top > yes.bottom + 18;
 
-    if (safeFromYes) break;
+      if (safeFromYes) break;
+    }
   }
 
   noAttempts += 1;
@@ -186,10 +198,17 @@ nextButtons.forEach((button) => {
 
 noButton.addEventListener("mouseenter", moveNoButton);
 noButton.addEventListener("focus", moveNoButton);
+noButton.addEventListener("pointerdown", (event) => {
+  if (event.pointerType !== "mouse") {
+    event.preventDefault();
+    moveNoButton();
+    showToast("Tentativo di No registrato come interesse tiepido.");
+  }
+});
 noButton.addEventListener("touchstart", (event) => {
   event.preventDefault();
   moveNoButton();
-});
+}, { passive: false });
 noButton.addEventListener("click", (event) => {
   event.preventDefault();
   moveNoButton();
