@@ -61,14 +61,18 @@ button {
   position: absolute;
   inset: 0;
   display: grid;
-  place-items: center;
+  align-items: safe center;
+  justify-items: center;
+  height: 100dvh;
   min-height: 100vh;
   padding: clamp(22px, 4vw, 64px);
   opacity: 0;
   visibility: hidden;
   transform: translateY(18px) scale(0.99);
   transition: opacity 260ms ease, transform 260ms ease, visibility 260ms ease;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .funnel-page.is-active {
@@ -627,8 +631,6 @@ h2 {
     height: 100svh;
     min-height: 100svh;
     padding: 42px 20px 32px;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .content.split,
